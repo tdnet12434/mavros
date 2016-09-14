@@ -140,8 +140,8 @@ private:
 
 			// From nmea_navsat_driver
 			fix->position_covariance[0 + 0] = \
-				fix->position_covariance[3 + 1] = std::pow(hdop, 2);
-			fix->position_covariance[6 + 2] = std::pow(2 * hdop, 2);
+				fix->position_covariance[3 + 1] = eph;//std::pow(hdop, 2); //thanabadee edited
+			fix->position_covariance[6 + 2] = epv;//std::pow(2 * hdop, 2);
 			fix->position_covariance_type =
 					sensor_msgs::NavSatFix::COVARIANCE_TYPE_APPROXIMATED;
 		}

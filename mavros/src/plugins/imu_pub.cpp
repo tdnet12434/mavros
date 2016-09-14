@@ -278,7 +278,8 @@ private:
 			auto atmp_msg = boost::make_shared<sensor_msgs::FluidPressure>();
 
 			atmp_msg->header = header;
-			atmp_msg->fluid_pressure = imu_hr.abs_pressure * MILLIBAR_TO_PASCAL;
+			atmp_msg->fluid_pressure = imu_hr.pressure_alt;
+			// atmp_msg->fluid_pressure = imu_hr.abs_pressure * MILLIBAR_TO_PASCAL;
 
 			press_pub.publish(atmp_msg);
 		}
