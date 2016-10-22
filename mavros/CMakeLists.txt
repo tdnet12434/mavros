@@ -26,6 +26,7 @@ find_package(catkin REQUIRED COMPONENTS
 # find_package(Boost REQUIRED COMPONENTS system)
 find_package(Boost REQUIRED COMPONENTS system)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules/")
 find_package(Eigen3)
 if(NOT EIGEN3_FOUND)
   # Fallback to cmake_modules
@@ -34,7 +35,7 @@ if(NOT EIGEN3_FOUND)
   set(EIGEN3_INCLUDE_DIRS ${EIGEN_INCLUDE_DIRS})
   set(EIGEN3_LIBRARIES ${EIGEN_LIBRARIES})
 endif()
-
+include_directories("/usr/include/eigen3")
 include(EnableCXX11)
 include(MavrosMavlink)
 
